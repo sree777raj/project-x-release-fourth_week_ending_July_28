@@ -1,0 +1,66 @@
+# Common properties
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/projectx
+    username: postgres
+    password: bxa7ikbtBN77E94gCeME
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  resources:
+    add-mappings: false
+  mvc:
+    throw-exception-if-no-handler-found: true
+
+server:
+  error:
+    whitelabel:
+      enabled: false
+
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    enabled: true
+---
+# Local profile
+spring:
+  config:
+    activate:
+      on-profile: local
+  jpa:
+    hibernate:
+      ddl-auto: update
+      show-sql: true
+---
+# Development profile
+spring:
+  config:
+    activate:
+      on-profile: dev
+  jpa:
+   hibernate:
+     ddl-auto: update
+     show-sql: true
+---
+# Staging profile
+spring:
+  config:
+    activate:
+      on-profile: staging
+  jpa:
+   hibernate:
+     ddl-auto: none
+     show-sql: true
+---
+# Production  profile
+spring:
+  config:
+    activate:
+      on-profile: prod
+  jpa:
+   hibernate:
+     ddl-auto: none
+     show-sql: true

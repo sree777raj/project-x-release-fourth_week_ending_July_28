@@ -1,0 +1,32 @@
+# Common properties
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/projectx
+    username: postgres
+    password: bxa7ikbtBN77E94gCeME
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+---
+# Test profile
+spring:
+  config:
+    activate:
+      on-profile: test
+  jpa:
+    hibernate:
+      ddl-auto: none
+      show-sql: true
+---
+# Local profile
+spring:
+  config:
+    activate:
+      on-profile: local
+  jpa:
+    hibernate:
+      ddl-auto: update
+      show-sql: true
+---
