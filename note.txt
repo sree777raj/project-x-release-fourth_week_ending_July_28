@@ -1,1 +1,1 @@
-this repo is failing in manual deployment also
+this repo is failing in manual deployment itself
